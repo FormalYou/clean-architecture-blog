@@ -13,12 +13,12 @@ import (
 
 // UserHandler 处理用户相关的 HTTP 请求
 type UserHandler struct {
-	userUsecase *usecase.UserUsecase
+	userUsecase usecase.UserUsecaseInterface
 	logger      *zap.Logger
 }
 
 // NewUserHandler 创建一个新的 UserHandler
-func NewUserHandler(userUsecase *usecase.UserUsecase, logger *zap.Logger) *UserHandler {
+func NewUserHandler(userUsecase usecase.UserUsecaseInterface, logger *zap.Logger) *UserHandler {
 	return &UserHandler{
 		userUsecase: userUsecase,
 		logger:      logger.Named("UserHandler"),

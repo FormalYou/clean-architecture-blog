@@ -2,7 +2,7 @@ package errorx
 
 import (
 	"encoding/json"
-	"fmt"
+	"errors"
 
 	"go.uber.org/zap/zapcore"
 )
@@ -48,7 +48,7 @@ func New(code int, underlyingErr error) *DetailError {
 	// If no specific underlying error is provided, use the message from the map.
 	err := underlyingErr
 	if err == nil {
-		err = fmt.Errorf(be.Message)
+		err = errors.New(be.Message)
 	}
 
 	return &DetailError{

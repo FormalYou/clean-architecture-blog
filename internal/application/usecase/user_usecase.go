@@ -1,6 +1,7 @@
 package usecase
 
 import (
+	"errors"
 	"time"
 
 	"github.com/formal-you/clean-architecture-blog/domain"
@@ -8,8 +9,13 @@ import (
 	"github.com/formal-you/clean-architecture-blog/internal/application/repository"
 	"github.com/formal-you/clean-architecture-blog/internal/errorx"
 	"golang.org/x/crypto/bcrypt"
-	"gorm.io/gorm"
 )
+
+// UserUsecaseInterface 定义了用户相关的业务逻辑接口
+type UserUsecaseInterface interface {
+	Register(user *domain.User) error
+	Login(username, password string) (string, error)
+}
 
 // UserUsecase 提供了用户相关的业务逻辑
 type UserUsecase struct {
@@ -20,7 +26,7 @@ type UserUsecase struct {
 }
 
 // NewUserUsecase 创建一个新的 UserUsecase
-func NewUserUsecase(userRepo repository.UserRepository, authSvc contracts.AuthService, jwtExpires time.Duration, logger contracts.Logger) *UserUsecase {
+func NewUserUsecase(userRepo repository.UserRepository, authSvc contracts.AuthService, jwtExpires time.Duration, logger contracts.Logger) UserUsecaseInterface {
 	return &UserUsecase{
 		userRepo:   userRepo,
 		authSvc:    authSvc,
@@ -35,7 +41,7 @@ func (uc *UserUsecase) Register(user *domain.User) error {
 	_, err := uc.userRepo.GetByUsername(user.Username)
 	if err == nil {
 		return errorx.New(errorx.CodeUserAlreadyExists, nil)
-	} else if err != gorm.ErrRecordNotFound {
+	} else if !errors.Is(err, repository.ErrNotFound) {
 		// A real database error occurred
 		uc.logger.Error("failed to get user by username during registration", "error", err)
 		return errorx.New(errorx.CodeInternalServerError, err)
@@ -62,7 +68,7 @@ func (uc *UserUsecase) Register(user *domain.User) error {
 func (uc *UserUsecase) Login(username, password string) (string, error) {
 	user, err := uc.userRepo.GetByUsername(username)
 	if err != nil {
-		if err == gorm.ErrRecordNotFound {
+		if errors.Is(err, repository.ErrNotFound) {
 			return "", errorx.New(errorx.CodeInvalidCredentials, err)
 		}
 		uc.logger.Warn("failed to get user by username", "username", username, "error", err)

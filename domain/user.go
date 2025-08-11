@@ -8,11 +8,10 @@ import (
 // User 是用户的领域实体
 type User struct {
 	ID           int64
-	Username     string 
+	Username     string
 	PasswordHash string
-	Email        string      
-	Profile      UserProfile 
-	
+	Email        string
+	Profile      UserProfile
 }
 
 var emailRegex = regexp.MustCompile(`^[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,4}$`)

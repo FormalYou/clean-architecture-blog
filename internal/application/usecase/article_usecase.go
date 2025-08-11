@@ -9,8 +9,16 @@ import (
 	"github.com/formal-you/clean-architecture-blog/internal/application/contracts"
 	"github.com/formal-you/clean-architecture-blog/internal/application/repository"
 	"github.com/formal-you/clean-architecture-blog/internal/errorx"
-	"gorm.io/gorm"
 )
+
+// ArticleUsecaseInterface 定义了文章相关的业务逻辑接口
+type ArticleUsecaseInterface interface {
+	CreateArticle(ctx context.Context, article *domain.Article) error
+	GetArticleByID(ctx context.Context, id int64) (*domain.Article, error)
+	GetAllArticles(ctx context.Context) ([]*domain.Article, error)
+	UpdateArticle(ctx context.Context, article *domain.Article) error
+	DeleteArticle(ctx context.Context, id int64) error
+}
 
 // ArticleUsecase 封装了文章相关的业务用例
 type ArticleUsecase struct {
@@ -21,7 +29,7 @@ type ArticleUsecase struct {
 }
 
 // NewArticleUsecase 创建一个新的 ArticleUsecase
-func NewArticleUsecase(repo repository.ArticleRepository, cache repository.ArticleCacheRepository, authService contracts.AuthService, logger contracts.Logger) *ArticleUsecase {
+func NewArticleUsecase(repo repository.ArticleRepository, cache repository.ArticleCacheRepository, authService contracts.AuthService, logger contracts.Logger) ArticleUsecaseInterface {
 	return &ArticleUsecase{
 		repo:        repo,
 		cache:       cache,
@@ -74,7 +82,7 @@ func (uc *ArticleUsecase) GetArticleByID(ctx context.Context, id int64) (*domain
 	// 2. 缓存未命中，从数据库获取
 	article, err := uc.repo.GetByID(ctx, id)
 	if err != nil {
-		if errors.Is(err, gorm.ErrRecordNotFound) {
+		if errors.Is(err, repository.ErrNotFound) {
 			return nil, errorx.New(errorx.CodeArticleNotFound, err)
 		}
 		return nil, errorx.New(errorx.CodeInternalServerError, err)
@@ -130,7 +138,7 @@ func (uc *ArticleUsecase) UpdateArticle(ctx context.Context, article *domain.Art
 	// 检查用户是否有权限修改文章
 	existingArticle, err := uc.repo.GetByID(ctx, article.ID)
 	if err != nil {
-		if errors.Is(err, gorm.ErrRecordNotFound) {
+		if errors.Is(err, repository.ErrNotFound) {
 			return errorx.New(errorx.CodeArticleNotFound, err)
 		}
 		return errorx.New(errorx.CodeInternalServerError, err)
@@ -159,7 +167,7 @@ func (uc *ArticleUsecase) DeleteArticle(ctx context.Context, id int64) error {
 	// 检查用户是否有权限删除文章
 	existingArticle, err := uc.repo.GetByID(ctx, id)
 	if err != nil {
-		if errors.Is(err, gorm.ErrRecordNotFound) {
+		if errors.Is(err, repository.ErrNotFound) {
 			return errorx.New(errorx.CodeArticleNotFound, err)
 		}
 		return errorx.New(errorx.CodeInternalServerError, err)

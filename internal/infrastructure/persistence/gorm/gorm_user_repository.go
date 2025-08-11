@@ -1,6 +1,7 @@
 package gorm
 
 import (
+	"errors"
 	"github.com/formal-you/clean-architecture-blog/domain"
 	"github.com/formal-you/clean-architecture-blog/internal/application/repository"
 	"gorm.io/gorm"
@@ -41,6 +42,9 @@ func (r *GormUserRepository) GetByUsername(username string) (*domain.User, error
 	var userModel UserModel
 	err := r.db.Where("username = ?", username).First(&userModel).Error
 	if err != nil {
+		if errors.Is(err, gorm.ErrRecordNotFound) {
+			return nil, repository.ErrNotFound
+		}
 		return nil, err
 	}
 	return userModel.ToDomain(), nil

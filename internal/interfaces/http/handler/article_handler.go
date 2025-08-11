@@ -15,12 +15,12 @@ import (
 
 // ArticleHandler handles HTTP requests for articles
 type ArticleHandler struct {
-	usecase *usecase.ArticleUsecase
+	usecase usecase.ArticleUsecaseInterface
 	logger  *zap.Logger
 }
 
 // NewArticleHandler creates a new ArticleHandler
-func NewArticleHandler(usecase *usecase.ArticleUsecase, logger *zap.Logger) *ArticleHandler {
+func NewArticleHandler(usecase usecase.ArticleUsecaseInterface, logger *zap.Logger) *ArticleHandler {
 	return &ArticleHandler{
 		usecase: usecase,
 		logger:  logger.Named("ArticleHandler"),

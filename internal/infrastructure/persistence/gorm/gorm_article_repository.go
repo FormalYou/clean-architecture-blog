@@ -2,6 +2,7 @@ package gorm
 
 import (
 	"context"
+	"errors"
 
 	"gorm.io/gorm"
 
@@ -27,6 +28,9 @@ func (r *GormArticleRepository) Create(ctx context.Context, article *domain.Arti
 func (r *GormArticleRepository) GetByID(ctx context.Context, id int64) (*domain.Article, error) {
 	var articleModel ArticleModel
 	if err := r.db.WithContext(ctx).First(&articleModel, id).Error; err != nil {
+		if errors.Is(err, gorm.ErrRecordNotFound) {
+			return nil, repository.ErrNotFound
+		}
 		return nil, err
 	}
 	return articleModel.ToDomain(), nil
