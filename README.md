@@ -30,7 +30,7 @@ graph TD
 ```
 
 *   **领域层 (Domain Layer):** 位于架构的最核心，包含业务实体（Entities）和核心业务规则。它不依赖任何其他层。
-*   **应用层 (Application Layer):** 封装和实现所有业务用例（Use Cases），通过编排领域层的实体来执行业务逻辑。此层定义了供外部使用的接口（Repositories, Services）。
+*   **应用层 (Application Layer):** 封装和实现所有业务用例（Use Cases），通过编排领域层的实体来执行业务逻辑。此层定义了供外部使用的接口（Repositories, Contracts）。
 *   **接口适配器层 (Interface Adapters):** 负责将数据从一种格式转换为对内层或外层最方便的格式。例如，Web Handler、中间件、DTOs 都在此层。
 *   **框架与驱动层 (Frameworks & Drivers):** 包含所有外部工具和框架的具体实现，例如 Web 框架（Gin）、数据库（GORM）、缓存（Redis）等。此层实现了应用层定义的接口。
 
@@ -42,6 +42,7 @@ graph TD
 *   **高可测试性**: 由于依赖关系清晰且面向接口编程，核心业务逻辑（Usecases）可以独立于数据库和UI进行单元测试，大大提高了代码质量和开发效率。
 *   **技术栈无关性**: 核心业务逻辑不依赖于任何具体的技术框架。未来可以轻松地将 Gin 更换为其他 Web 框架，或将 GORM 更换为其他 ORM，而无需改动业务代码。
 *   **职责清晰**: 每个目录和文件都有明确的职责，使得新开发者能够快速理解项目结构和代码意图。
+*   **健壮的错误处理**: 实现了一套统一的双层级错误处理系统，对内记录详细分级的日志，对外暴露标准化的错误码和信息，安全且易于排查。
 
 ## 3. 技术栈
 
@@ -70,9 +71,10 @@ graph TD
 │   └── ...           # 其他领域实体 (User, Tag, Comment, etc.)
 ├── internal/         # 私有应用代码，是整个项目的核心
 │   ├── application/  # 应用层 (Use Cases)
-│   │   ├── usecase/  # 存放用例实现
+│   │   ├── usecase/    # 存放用例实现
 │   │   ├── repository/ # 仓库接口定义
-│   │   └── service/    # 应用服务接口定义 (e.g., Auth, Logger)
+│   │   └── contracts/  # 应用服务接口契约 (e.g., Auth, Logger)
+│   ├── errorx/         # 统一错误码和错误处理
 │   ├── interfaces/   # 接口适配器层
 │   │   └── http/
 │   │       ├── handler/    # HTTP Handlers (Controllers)
@@ -96,7 +98,7 @@ graph TD
     *   创建 `domain` 目录并定义核心实体 (`Article`, `User`) 及其业务规则。
 
 2.  **构建应用层 (Application Layer):**
-    *   在 `internal/application` 中定义 `usecase` 和 `repository` 接口。
+    *   在 `internal/application` 中定义 `usecase`、`repository` 和 `contracts` 接口。
     *   为核心用例（如 `CreateArticle`）编写单元测试（配合 Mock）。
 
 3.  **实现基础设施 (Infrastructure Layer):**
@@ -116,7 +118,6 @@ graph TD
 *   **增加自动化测试**:
     *   **单元测试**: 为 `domain` 和 `application` 层编写完整的单元测试。
     *   **集成测试**: 为 `infrastructure` 层编写集成测试，验证与数据库、缓存等外部服务的连通性。
-*   **优化错误处理**: 引入自定义错误类型，在 `handler` 层根据错误类型返回更精确的 HTTP 状态码。
 *   **完善配置管理**: 将配置信息通过构造函数注入到依赖模块，而不是在模块内部直接调用配置库，以降低耦合。
 *   **API 文档**: 集成 Swagger 或 OpenAPI，自动生成并提供 API 文档。
 *   **增加功能**: 完善评论、标签等尚未完全实现的功能模块。
