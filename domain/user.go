@@ -35,7 +35,7 @@ type UserProfile struct {
 }
 
 // UserRepository 定义了用户数据的存储库接口
-type UserRepository interface {
-	Create(user *User) error
-	GetByUsername(username string) (*User, error)
-}
+// type UserRepository interface {
+// 	Create(user *User) error
+// 	GetByUsername(username string) (*User, error)
+// }
