@@ -1,0 +1,19 @@
+database:
+  host: "127.0.0.1"
+  port: "3306"
+  user: "root"
+  password: "123456"
+  dbname: "miniblog"
+
+jwt:
+  secret: "your-very-secret-key"
+  expires_in_minutes: 1440 # 24 hours
+
+logger:
+ level: "debug"
+ encoding: "json"
+
+redis:
+ addr: "127.0.0.1:6379"
+ password: "your-redis-password"
+ db: 0
