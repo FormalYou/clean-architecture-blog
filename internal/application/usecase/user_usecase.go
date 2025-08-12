@@ -14,7 +14,7 @@ import (
 // UserUsecaseInterface 定义了用户相关的业务逻辑接口
 type UserUsecaseInterface interface {
 	Register(user *domain.User) error
-	Login(username, password string) (string, error)
+	Login(email, password string) (string, error)
 }
 
 // UserUsecase 提供了用户相关的业务逻辑
@@ -38,12 +38,12 @@ func NewUserUsecase(userRepo repository.UserRepository, authSvc contracts.AuthSe
 // Register 处理用户注册
 func (uc *UserUsecase) Register(user *domain.User) error {
 	// Check if user already exists
-	_, err := uc.userRepo.GetByUsername(user.Username)
+	_, err := uc.userRepo.FindByEmail(user.Email)
 	if err == nil {
 		return errorx.New(errorx.CodeUserAlreadyExists, nil)
 	} else if !errors.Is(err, repository.ErrNotFound) {
 		// A real database error occurred
-		uc.logger.Error("failed to get user by username during registration", "error", err)
+		uc.logger.Error("failed to get user by email during registration", "error", err)
 		return errorx.New(errorx.CodeInternalServerError, err)
 	}
 
@@ -65,28 +65,28 @@ func (uc *UserUsecase) Register(user *domain.User) error {
 }
 
 // Login 处理用户登录
-func (uc *UserUsecase) Login(username, password string) (string, error) {
-	user, err := uc.userRepo.GetByUsername(username)
+func (uc *UserUsecase) Login(email, password string) (string, error) {
+	user, err := uc.userRepo.FindByEmail(email)
 	if err != nil {
 		if errors.Is(err, repository.ErrNotFound) {
 			return "", errorx.New(errorx.CodeInvalidCredentials, err)
 		}
-		uc.logger.Warn("failed to get user by username", "username", username, "error", err)
+		uc.logger.Warn("failed to get user by email", "email", email, "error", err)
 		return "", errorx.New(errorx.CodeInternalServerError, err)
 	}
 
 	err = bcrypt.CompareHashAndPassword([]byte(user.PasswordHash), []byte(password))
 	if err != nil {
-		uc.logger.Warn("invalid password", "username", username, "error", err)
+		uc.logger.Warn("invalid password", "email", email, "error", err)
 		return "", errorx.New(errorx.CodeInvalidCredentials, err)
 	}
 
 	token, err := uc.authSvc.GenerateToken(user.ID)
 	if err != nil {
-		uc.logger.Error("failed to generate token", "username", username, "error", err)
+		uc.logger.Error("failed to generate token", "email", email, "error", err)
 		return "", errorx.New(errorx.CodeInternalServerError, err)
 	}
 
-	uc.logger.Info("user logged in successfully", "username", username)
+	uc.logger.Info("user logged in successfully", "email", email)
 	return token, nil
 }

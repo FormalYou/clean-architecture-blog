@@ -6,13 +6,10 @@ import (
 	"strings"
 
 	"github.com/formal-you/clean-architecture-blog/internal/application/contracts"
+	"github.com/formal-you/clean-architecture-blog/internal/interfaces/http/dto"
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
 )
-
-type contextKey string
-
-const UserIDKey contextKey = "userID"
 
 // AuthMiddleware creates a Gin middleware for JWT authentication.
 func AuthMiddleware(authSvc contracts.AuthService, logger *zap.Logger) gin.HandlerFunc {
@@ -25,7 +22,7 @@ func AuthMiddleware(authSvc contracts.AuthService, logger *zap.Logger) gin.Handl
 		}
 
 		parts := strings.Split(authHeader, " ")
-		if len(parts) != 2 || parts[0] != "bearer" {
+		if len(parts) != 2 || parts[0] != "Bearer" {
 			logger.Warn("invalid token format")
 			c.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"error": "invalid token format"})
 			return
@@ -39,7 +36,7 @@ func AuthMiddleware(authSvc contracts.AuthService, logger *zap.Logger) gin.Handl
 		}
 
 		logger.Info("user authenticated", zap.Int64("user_id", userID))
-		ctx := context.WithValue(c.Request.Context(), UserIDKey, userID)
+		ctx := context.WithValue(c.Request.Context(), dto.UserIDKey, userID)
 		c.Request = c.Request.WithContext(ctx)
 		c.Next()
 	}

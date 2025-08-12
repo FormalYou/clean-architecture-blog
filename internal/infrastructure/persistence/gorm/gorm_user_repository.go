@@ -32,6 +32,9 @@ func (r *GormUserRepository) FindByEmail(email string) (*domain.User, error) {
 	var userModel UserModel
 	err := r.db.Where("email = ?", email).First(&userModel).Error
 	if err != nil {
+		if errors.Is(err, gorm.ErrRecordNotFound) {
+			return nil, repository.ErrNotFound
+		}
 		return nil, err
 	}
 	return userModel.ToDomain(), nil

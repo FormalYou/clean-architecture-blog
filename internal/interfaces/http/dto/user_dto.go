@@ -9,7 +9,7 @@ type RegisterRequest struct {
 
 // LoginRequest 是用户登录请求的 DTO
 type LoginRequest struct {
-	Username string `json:"username" binding:"required"`
+	Email    string `json:"email" binding:"required,email"`
 	Password string `json:"password" binding:"required"`
 }
 

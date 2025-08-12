@@ -7,14 +7,9 @@ import (
 	"time"
 
 	"github.com/formal-you/clean-architecture-blog/internal/application/contracts"
+	"github.com/formal-you/clean-architecture-blog/internal/interfaces/http/dto"
 	"github.com/golang-jwt/jwt/v5"
 )
-
-// contextKey is a custom type for context keys to avoid collisions.
-type contextKey string
-
-// UserIDKey is the key for storing the user ID in the context.
-const UserIDKey contextKey = "userID"
 
 // JWTAuthService provides JWT generation and validation services.
 type JWTAuthService struct {
@@ -62,7 +57,7 @@ func (s *JWTAuthService) ValidateToken(tokenString string) (int64, error) {
 
 // GetUserIDFromContext extracts user ID from a context.
 func (s *JWTAuthService) GetUserIDFromContext(ctx context.Context) (int64, error) {
-	userID, ok := ctx.Value(UserIDKey).(int64)
+	userID, ok := ctx.Value(dto.UserIDKey).(int64)
 	if !ok {
 		return 0, errors.New("invalid user ID in context")
 	}

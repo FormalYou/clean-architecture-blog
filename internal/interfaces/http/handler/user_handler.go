@@ -56,12 +56,12 @@ func (h *UserHandler) Login(c *gin.Context) {
 		return
 	}
 
-	token, err := h.userUsecase.Login(req.Username, req.Password)
+	token, err := h.userUsecase.Login(req.Email, req.Password)
 	if err != nil {
 		c.Error(err) // Pass the error to the middleware
 		return
 	}
 
-	h.logger.Info("user logged in successfully", zap.String("username", req.Username))
+	h.logger.Info("user logged in successfully", zap.String("email", req.Email))
 	c.JSON(http.StatusOK, dto.LoginResponse{Token: token})
 }

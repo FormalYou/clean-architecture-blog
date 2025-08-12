@@ -43,7 +43,7 @@ func TestUserUsecase_Register(t *testing.T) {
 				Email:        "test@example.com",
 			},
 			setupMocks: func() {
-				mockUserRepo.EXPECT().GetByUsername("testuser").Return(nil, repository.ErrNotFound)
+				mockUserRepo.EXPECT().FindByEmail("test@example.com").Return(nil, repository.ErrNotFound)
 				mockUserRepo.EXPECT().Create(gomock.Any()).Return(nil)
 				mockLogger.EXPECT().Info(gomock.Any(), gomock.Any())
 			},
@@ -57,12 +57,12 @@ func TestUserUsecase_Register(t *testing.T) {
 				Email:        "existing@example.com",
 			},
 			setupMocks: func() {
-				mockUserRepo.EXPECT().GetByUsername("existinguser").Return(&domain.User{}, nil)
+				mockUserRepo.EXPECT().FindByEmail("existing@example.com").Return(&domain.User{}, nil)
 			},
 			expectedError: errorx.New(errorx.CodeUserAlreadyExists, nil),
 		},
 		{
-			name: "Database error on GetByUsername",
+			name: "Database error on FindByEmail",
 			inputUser: &domain.User{
 				Username:     "dbuser",
 				PasswordHash: "password123",
@@ -70,7 +70,7 @@ func TestUserUsecase_Register(t *testing.T) {
 			},
 			setupMocks: func() {
 				dbError := errors.New("database connection failed")
-				mockUserRepo.EXPECT().GetByUsername("dbuser").Return(nil, dbError)
+				mockUserRepo.EXPECT().FindByEmail("db@example.com").Return(nil, dbError)
 				mockLogger.EXPECT().Error(gomock.Any(), gomock.Any())
 			},
 			expectedError: errorx.New(errorx.CodeInternalServerError, errors.New("database connection failed")),

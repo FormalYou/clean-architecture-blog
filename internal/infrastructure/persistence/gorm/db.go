@@ -31,7 +31,15 @@ func NewDB(cfg DSNConfig) (*gorm.DB, error) {
 	}
 
 	// Auto-migrate the schema using GORM models
-	err = db.AutoMigrate(&UserModel{}, &ArticleModel{}, &TagModel{}, &CommentModel{})
+	// Auto-migrate the schema, but handle many2many separately
+	err = db.AutoMigrate(&UserModel{}, &ArticleModel{}, &TagModel{})
+	if err != nil {
+		return nil, err
+	}
+	// Manually create the many2many relationship to avoid GORM's default primary key
+	if !db.Migrator().HasConstraint(&ArticleModel{}, "Tags") {
+		db.Migrator().CreateConstraint(&ArticleModel{}, "Tags")
+	}
 	if err != nil {
 		return nil, err
 	}
