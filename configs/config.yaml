@@ -12,8 +12,17 @@ jwt:
 logger:
  level: "debug"
  encoding: "json"
+ file:
+   filename: "logs/app.log" # 日志文件路径
+   max_size: 10          # 每个日志文件的最大大小（MB）
+   max_backups: 5        # 保留的旧日志文件的最大数量
+   max_age: 30           # 保留旧文件的最大天数
+   compress: false       # 是否压缩/归档旧文件
 
 redis:
  addr: "127.0.0.1:6379"
  password: "123456"
  db: 0
+
+audit_log:
+ file: "logs/audit.log"

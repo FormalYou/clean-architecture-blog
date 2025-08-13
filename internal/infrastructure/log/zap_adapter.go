@@ -29,3 +29,8 @@ func (a *ZapAdapter) Warn(msg string, args ...interface{}) {
 func (a *ZapAdapter) Error(msg string, args ...interface{}) {
 	a.logger.Errorw(msg, args...)
 }
+
+// With adds structured context to a logger.
+func (a *ZapAdapter) With(args ...interface{}) contracts.Logger {
+	return &ZapAdapter{logger: a.logger.With(args...)}
+}

@@ -84,7 +84,8 @@ func SetupRouter(cfg *config.Config, db *gorm.DB, rds *redis.Client, logger *zap
 	authService := auth.NewJWTAuthService(cfg.JWT.Secret)
 
 	loggerAdapter := log.NewZapAdapter(logger)
-	userUsecase := usecase.NewUserUsecase(userRepo, authService, time.Duration(cfg.JWT.ExpiresInMinutes)*time.Minute, loggerAdapter)
+	// auditSvc := usecase.NewAuditService(loggerAdapter)
+	userUsecase := usecase.NewUserUsecase(userRepo, authService, time.Duration(cfg.JWT.ExpiresInMinutes)*time.Minute, loggerAdapter /*, auditSvc*/)
 	articleUsecase := usecase.NewArticleUsecase(articleRepo, articleCacheRepo, authService, loggerAdapter)
 
 	userHandler := handler.NewUserHandler(userUsecase, logger)

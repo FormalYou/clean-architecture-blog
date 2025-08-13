@@ -12,7 +12,7 @@ import (
 )
 
 func TestArticleHandler_Integration_Create(t *testing.T) {
-	ClearAllData()
+	// ClearAllData()
 
 	// 准备：注册和登录以获取 token
 	registerReq := dto.RegisterRequest{Username: "testuser", Password: "password", Email: "test@example.com"}

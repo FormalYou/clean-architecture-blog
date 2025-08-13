@@ -12,6 +12,7 @@ package mocks
 import (
 	reflect "reflect"
 
+	contracts "github.com/formal-you/clean-architecture-blog/internal/application/contracts"
 	gomock "go.uber.org/mock/gomock"
 )
 
@@ -88,4 +89,22 @@ func (mr *MockLoggerMockRecorder) Warn(msg any, args ...any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]any{msg}, args...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Warn", reflect.TypeOf((*MockLogger)(nil).Warn), varargs...)
+}
+
+// With mocks base method.
+func (m *MockLogger) With(args ...any) contracts.Logger {
+	m.ctrl.T.Helper()
+	varargs := []any{}
+	for _, a := range args {
+		varargs = append(varargs, a)
+	}
+	ret := m.ctrl.Call(m, "With", varargs...)
+	ret0, _ := ret[0].(contracts.Logger)
+	return ret0
+}
+
+// With indicates an expected call of With.
+func (mr *MockLoggerMockRecorder) With(args ...any) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "With", reflect.TypeOf((*MockLogger)(nil).With), args...)
 }

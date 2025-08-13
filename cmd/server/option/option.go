@@ -57,6 +57,7 @@ func SetupRouter(configPath string) *gin.Engine {
 	articleHandler := handler.NewArticleHandler(articleUsecase, zapLogger)
 
 	userRepo := gorm_infra.NewGormUserRepository(db)
+	// auditSvc := usecase.NewAuditService(logger)
 	userUsecase := usecase.NewUserUsecase(userRepo, jwtAuth, jwtExpires, logger)
 	userHandler := handler.NewUserHandler(userUsecase, zapLogger)
 

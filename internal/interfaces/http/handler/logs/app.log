@@ -1,0 +1,65 @@
+{"level":"INFO","time":"2025-08-13T11:55:10.688+0800","caller":"log/zap_adapter.go:20","message":"user registered successfully","username":"testuser"}
+{"level":"INFO","time":"2025-08-13T11:55:10.728+0800","caller":"log/zap_adapter.go:20","message":"user logged in successfully","email":"test@example.com"}
+{"level":"WARN","time":"2025-08-13T11:55:10.730+0800","caller":"middleware/auth_middleware.go:33","message":"invalid token","error":"token is malformed: token contains an invalid number of segments"}
+{"level":"INFO","time":"2025-08-13T11:56:32.683+0800","caller":"log/zap_adapter.go:20","message":"user registered successfully","username":"testuser"}
+{"level":"INFO","time":"2025-08-13T11:56:32.724+0800","caller":"log/zap_adapter.go:20","message":"user logged in successfully","email":"test@example.com"}
+{"level":"WARN","time":"2025-08-13T11:56:32.725+0800","caller":"middleware/auth_middleware.go:33","message":"invalid token","error":"token is malformed: token contains an invalid number of segments"}
+{"level":"INFO","time":"2025-08-13T12:02:04.747+0800","caller":"log/zap_adapter.go:20","message":"user registered successfully","username":"testuser"}
+{"level":"INFO","time":"2025-08-13T12:02:04.788+0800","caller":"log/zap_adapter.go:20","message":"user logged in successfully","email":"test@example.com"}
+{"level":"WARN","time":"2025-08-13T12:02:04.789+0800","caller":"middleware/auth_middleware.go:33","message":"invalid token","error":"token is malformed: token contains an invalid number of segments"}
+{"level":"INFO","time":"2025-08-13T12:02:39.537+0800","caller":"log/zap_adapter.go:20","message":"user registered successfully","username":"testuser"}
+{"level":"INFO","time":"2025-08-13T12:02:39.590+0800","caller":"log/zap_adapter.go:20","message":"user logged in successfully","email":"test@example.com"}
+{"level":"WARN","time":"2025-08-13T12:02:44.535+0800","caller":"middleware/auth_middleware.go:33","message":"invalid token","error":"token is malformed: token contains an invalid number of segments"}
+{"level":"INFO","time":"2025-08-13T12:04:44.684+0800","caller":"log/zap_adapter.go:20","message":"user logged in successfully","email":"test@example.com"}
+{"level":"WARN","time":"2025-08-13T12:04:47.442+0800","caller":"middleware/auth_middleware.go:33","message":"invalid token","error":"token is malformed: token contains an invalid number of segments"}
+{"level":"INFO","time":"2025-08-13T12:05:54.287+0800","caller":"log/zap_adapter.go:20","message":"user logged in successfully","email":"test@example.com"}
+{"level":"INFO","time":"2025-08-13T12:10:04.984+0800","caller":"log/zap_adapter.go:20","message":"user logged in successfully","email":"test@example.com"}
+{"level":"INFO","time":"2025-08-13T12:13:25.227+0800","caller":"log/zap_adapter.go:20","message":"user logged in successfully","email":"test@example.com"}
+{"level":"INFO","time":"2025-08-13T12:55:10.908+0800","caller":"log/zap_adapter.go:20","message":"event recorded","timestamp":"2025-08-13T12:55:10.908+0800","user_id":0,"action":"register_failed","entity":"user","entity_id":0,"details":"{\"email\":\"test@example.com\",\"error_code\":20001,\"reason\":\"user_already_exists\",\"username\":\"testuser\"}"}
+{"level":"WARN","time":"2025-08-13T12:55:10.909+0800","caller":"middleware/error_middleware.go:37","message":"User already exists","code":20001,"message":"User already exists","request_uri":""}
+{"level":"INFO","time":"2025-08-13T12:55:10.948+0800","caller":"log/zap_adapter.go:20","message":"user logged in successfully","email":"test@example.com"}
+{"level":"INFO","time":"2025-08-13T12:55:10.948+0800","caller":"log/zap_adapter.go:20","message":"event recorded","timestamp":"2025-08-13T12:55:10.948+0800","user_id":37,"action":"login_success","entity":"user","entity_id":37,"details":"{\"email\":\"test@example.com\"}"}
+{"level":"INFO","time":"2025-08-13T12:55:10.948+0800","caller":"handler/user_handler.go:65","message":"user logged in successfully","email":"test@example.com"}
+{"level":"INFO","time":"2025-08-13T12:55:10.948+0800","caller":"middleware/auth_middleware.go:38","message":"user authenticated","user_id":37}
+{"level":"INFO","time":"2025-08-13T12:55:10.965+0800","caller":"log/zap_adapter.go:20","message":"article created successfully","article_id":12}
+{"level":"INFO","time":"2025-08-13T12:55:10.965+0800","caller":"handler/article_handler.go:52","message":"article created successfully","article_id":12}
+{"level":"INFO","time":"2025-08-13T12:55:11.043+0800","caller":"log/zap_adapter.go:20","message":"user registered successfully","username":"newuser"}
+{"level":"INFO","time":"2025-08-13T12:55:11.043+0800","caller":"log/zap_adapter.go:20","message":"event recorded","timestamp":"2025-08-13T12:55:11.043+0800","user_id":0,"action":"register_success","entity":"user","entity_id":0,"details":"{\"email\":\"new@example.com\",\"username\":\"newuser\"}"}
+{"level":"INFO","time":"2025-08-13T12:55:11.043+0800","caller":"handler/user_handler.go:47","message":"user registered successfully","username":"newuser"}
+{"level":"INFO","time":"2025-08-13T12:55:11.110+0800","caller":"log/zap_adapter.go:20","message":"user registered successfully","username":"loginuser"}
+{"level":"INFO","time":"2025-08-13T12:55:11.110+0800","caller":"log/zap_adapter.go:20","message":"event recorded","timestamp":"2025-08-13T12:55:11.110+0800","user_id":0,"action":"register_success","entity":"user","entity_id":0,"details":"{\"email\":\"login@example.com\",\"username\":\"loginuser\"}"}
+{"level":"INFO","time":"2025-08-13T12:55:11.110+0800","caller":"handler/user_handler.go:47","message":"user registered successfully","username":"loginuser"}
+{"level":"INFO","time":"2025-08-13T12:55:11.150+0800","caller":"log/zap_adapter.go:20","message":"user logged in successfully","email":"login@example.com"}
+{"level":"INFO","time":"2025-08-13T12:55:11.150+0800","caller":"log/zap_adapter.go:20","message":"event recorded","timestamp":"2025-08-13T12:55:11.150+0800","user_id":39,"action":"login_success","entity":"user","entity_id":39,"details":"{\"email\":\"login@example.com\"}"}
+{"level":"INFO","time":"2025-08-13T12:55:11.150+0800","caller":"handler/user_handler.go:65","message":"user logged in successfully","email":"login@example.com"}
+{"level":"INFO","time":"2025-08-13T13:00:42.787+0800","caller":"log/zap_adapter.go:20","message":"user registered successfully","username":"testuser"}
+{"level":"INFO","time":"2025-08-13T13:00:42.787+0800","caller":"log/zap_adapter.go:20","message":"event recorded","timestamp":"2025-08-13T13:00:42.787+0800","user_id":0,"action":"register_success","entity":"user","entity_id":0,"details":"{\"email\":\"test@example.com\",\"username\":\"testuser\"}"}
+{"level":"INFO","time":"2025-08-13T13:00:42.787+0800","caller":"handler/user_handler.go:47","message":"user registered successfully","username":"testuser"}
+{"level":"INFO","time":"2025-08-13T13:00:42.826+0800","caller":"log/zap_adapter.go:20","message":"user logged in successfully","email":"test@example.com"}
+{"level":"INFO","time":"2025-08-13T13:00:42.826+0800","caller":"log/zap_adapter.go:20","message":"event recorded","timestamp":"2025-08-13T13:00:42.826+0800","user_id":42,"action":"login_success","entity":"user","entity_id":42,"details":"{\"email\":\"test@example.com\"}"}
+{"level":"INFO","time":"2025-08-13T13:00:42.826+0800","caller":"handler/user_handler.go:65","message":"user logged in successfully","email":"test@example.com"}
+{"level":"INFO","time":"2025-08-13T13:00:42.826+0800","caller":"middleware/auth_middleware.go:38","message":"user authenticated","user_id":42}
+{"level":"INFO","time":"2025-08-13T13:00:42.837+0800","caller":"log/zap_adapter.go:20","message":"article created successfully","article_id":14}
+{"level":"INFO","time":"2025-08-13T13:00:42.838+0800","caller":"handler/article_handler.go:52","message":"article created successfully","article_id":14}
+{"level":"INFO","time":"2025-08-13T13:00:42.912+0800","caller":"log/zap_adapter.go:20","message":"user registered successfully","username":"newuser"}
+{"level":"INFO","time":"2025-08-13T13:00:42.912+0800","caller":"log/zap_adapter.go:20","message":"event recorded","timestamp":"2025-08-13T13:00:42.912+0800","user_id":0,"action":"register_success","entity":"user","entity_id":0,"details":"{\"email\":\"new@example.com\",\"username\":\"newuser\"}"}
+{"level":"INFO","time":"2025-08-13T13:00:42.912+0800","caller":"handler/user_handler.go:47","message":"user registered successfully","username":"newuser"}
+{"level":"INFO","time":"2025-08-13T13:00:42.980+0800","caller":"log/zap_adapter.go:20","message":"user registered successfully","username":"loginuser"}
+{"level":"INFO","time":"2025-08-13T13:00:42.980+0800","caller":"log/zap_adapter.go:20","message":"event recorded","timestamp":"2025-08-13T13:00:42.980+0800","user_id":0,"action":"register_success","entity":"user","entity_id":0,"details":"{\"email\":\"login@example.com\",\"username\":\"loginuser\"}"}
+{"level":"INFO","time":"2025-08-13T13:00:42.980+0800","caller":"handler/user_handler.go:47","message":"user registered successfully","username":"loginuser"}
+{"level":"INFO","time":"2025-08-13T13:00:43.019+0800","caller":"log/zap_adapter.go:20","message":"user logged in successfully","email":"login@example.com"}
+{"level":"INFO","time":"2025-08-13T13:00:43.019+0800","caller":"log/zap_adapter.go:20","message":"event recorded","timestamp":"2025-08-13T13:00:43.019+0800","user_id":44,"action":"login_success","entity":"user","entity_id":44,"details":"{\"email\":\"login@example.com\"}"}
+{"level":"INFO","time":"2025-08-13T13:00:43.019+0800","caller":"handler/user_handler.go:65","message":"user logged in successfully","email":"login@example.com"}
+{"level":"INFO","time":"2025-08-13T14:11:00.035+0800","caller":"log/zap_adapter.go:20","message":"user registered successfully","username":"testuser"}
+{"level":"INFO","time":"2025-08-13T14:11:00.035+0800","caller":"handler/user_handler.go:47","message":"user registered successfully","username":"testuser"}
+{"level":"INFO","time":"2025-08-13T14:11:00.074+0800","caller":"log/zap_adapter.go:20","message":"user logged in successfully","email":"test@example.com"}
+{"level":"INFO","time":"2025-08-13T14:11:00.074+0800","caller":"handler/user_handler.go:65","message":"user logged in successfully","email":"test@example.com"}
+{"level":"INFO","time":"2025-08-13T14:11:00.074+0800","caller":"middleware/auth_middleware.go:38","message":"user authenticated","user_id":49}
+{"level":"INFO","time":"2025-08-13T14:11:00.084+0800","caller":"log/zap_adapter.go:20","message":"article created successfully","article_id":17}
+{"level":"INFO","time":"2025-08-13T14:11:00.084+0800","caller":"handler/article_handler.go:52","message":"article created successfully","article_id":17}
+{"level":"INFO","time":"2025-08-13T14:12:25.047+0800","caller":"log/zap_adapter.go:20","message":"user registered successfully","username":"newuser"}
+{"level":"INFO","time":"2025-08-13T14:12:25.047+0800","caller":"handler/user_handler.go:47","message":"user registered successfully","username":"newuser"}
+{"level":"INFO","time":"2025-08-13T14:12:25.119+0800","caller":"log/zap_adapter.go:20","message":"user registered successfully","username":"loginuser"}
+{"level":"INFO","time":"2025-08-13T14:12:25.119+0800","caller":"handler/user_handler.go:47","message":"user registered successfully","username":"loginuser"}
+{"level":"INFO","time":"2025-08-13T14:12:25.158+0800","caller":"log/zap_adapter.go:20","message":"user logged in successfully","email":"login@example.com"}
+{"level":"INFO","time":"2025-08-13T14:12:25.158+0800","caller":"handler/user_handler.go:65","message":"user logged in successfully","email":"login@example.com"}

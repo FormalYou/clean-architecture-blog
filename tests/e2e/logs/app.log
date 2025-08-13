@@ -1,0 +1,77 @@
+{"level":"INFO","time":"2025-08-13T12:55:12.020+0800","caller":"log/zap_adapter.go:20","message":"user registered successfully","username":"testuser_1755060911968027979"}
+{"level":"INFO","time":"2025-08-13T12:55:12.021+0800","caller":"log/zap_adapter.go:20","message":"event recorded","timestamp":"2025-08-13T12:55:12.021+0800","user_id":0,"action":"register_success","entity":"user","entity_id":0,"details":"{\"email\":\"testuser_1755060911968027979@example.com\",\"username\":\"testuser_1755060911968027979\"}"}
+{"level":"INFO","time":"2025-08-13T12:55:12.021+0800","caller":"handler/user_handler.go:47","message":"user registered successfully","username":"testuser_1755060911968027979"}
+{"level":"INFO","time":"2025-08-13T12:55:12.061+0800","caller":"log/zap_adapter.go:20","message":"user logged in successfully","email":"testuser_1755060911968027979@example.com"}
+{"level":"INFO","time":"2025-08-13T12:55:12.061+0800","caller":"log/zap_adapter.go:20","message":"event recorded","timestamp":"2025-08-13T12:55:12.061+0800","user_id":40,"action":"login_success","entity":"user","entity_id":40,"details":"{\"email\":\"testuser_1755060911968027979@example.com\"}"}
+{"level":"INFO","time":"2025-08-13T12:55:12.061+0800","caller":"handler/user_handler.go:65","message":"user logged in successfully","email":"testuser_1755060911968027979@example.com"}
+{"level":"INFO","time":"2025-08-13T12:55:12.062+0800","caller":"middleware/auth_middleware.go:38","message":"user authenticated","user_id":40}
+{"level":"INFO","time":"2025-08-13T12:55:12.070+0800","caller":"log/zap_adapter.go:20","message":"article created successfully","article_id":13}
+{"level":"INFO","time":"2025-08-13T12:55:12.070+0800","caller":"handler/article_handler.go:52","message":"article created successfully","article_id":13}
+{"level":"INFO","time":"2025-08-13T12:55:12.071+0800","caller":"log/zap_adapter.go:20","message":"article cache miss","article_id":13}
+{"level":"INFO","time":"2025-08-13T12:55:12.074+0800","caller":"handler/article_handler.go:70","message":"article retrieved successfully","article_id":13}
+{"level":"INFO","time":"2025-08-13T12:55:12.122+0800","caller":"log/zap_adapter.go:20","message":"user registered successfully","username":"testuser_1755060912074406172"}
+{"level":"INFO","time":"2025-08-13T12:55:12.122+0800","caller":"log/zap_adapter.go:20","message":"event recorded","timestamp":"2025-08-13T12:55:12.122+0800","user_id":0,"action":"register_success","entity":"user","entity_id":0,"details":"{\"email\":\"testuser_1755060912074406172@example.com\",\"username\":\"testuser_1755060912074406172\"}"}
+{"level":"INFO","time":"2025-08-13T12:55:12.122+0800","caller":"handler/user_handler.go:47","message":"user registered successfully","username":"testuser_1755060912074406172"}
+{"level":"INFO","time":"2025-08-13T12:55:12.162+0800","caller":"log/zap_adapter.go:20","message":"user logged in successfully","email":"testuser_1755060912074406172@example.com"}
+{"level":"INFO","time":"2025-08-13T12:55:12.162+0800","caller":"log/zap_adapter.go:20","message":"event recorded","timestamp":"2025-08-13T12:55:12.162+0800","user_id":41,"action":"login_success","entity":"user","entity_id":41,"details":"{\"email\":\"testuser_1755060912074406172@example.com\"}"}
+{"level":"INFO","time":"2025-08-13T12:55:12.162+0800","caller":"handler/user_handler.go:65","message":"user logged in successfully","email":"testuser_1755060912074406172@example.com"}
+{"level":"INFO","time":"2025-08-13T13:00:43.662+0800","caller":"log/zap_adapter.go:20","message":"user registered successfully","username":"testuser_1755061243609178864"}
+{"level":"INFO","time":"2025-08-13T13:00:43.662+0800","caller":"log/zap_adapter.go:20","message":"event recorded","timestamp":"2025-08-13T13:00:43.662+0800","user_id":0,"action":"register_success","entity":"user","entity_id":0,"details":"{\"email\":\"testuser_1755061243609178864@example.com\",\"username\":\"testuser_1755061243609178864\"}"}
+{"level":"INFO","time":"2025-08-13T13:00:43.662+0800","caller":"handler/user_handler.go:47","message":"user registered successfully","username":"testuser_1755061243609178864"}
+{"level":"INFO","time":"2025-08-13T13:00:43.702+0800","caller":"log/zap_adapter.go:20","message":"user logged in successfully","email":"testuser_1755061243609178864@example.com"}
+{"level":"INFO","time":"2025-08-13T13:00:43.702+0800","caller":"log/zap_adapter.go:20","message":"event recorded","timestamp":"2025-08-13T13:00:43.702+0800","user_id":45,"action":"login_success","entity":"user","entity_id":45,"details":"{\"email\":\"testuser_1755061243609178864@example.com\"}"}
+{"level":"INFO","time":"2025-08-13T13:00:43.702+0800","caller":"handler/user_handler.go:65","message":"user logged in successfully","email":"testuser_1755061243609178864@example.com"}
+{"level":"INFO","time":"2025-08-13T13:00:43.702+0800","caller":"middleware/auth_middleware.go:38","message":"user authenticated","user_id":45}
+{"level":"INFO","time":"2025-08-13T13:00:43.711+0800","caller":"log/zap_adapter.go:20","message":"article created successfully","article_id":15}
+{"level":"INFO","time":"2025-08-13T13:00:43.711+0800","caller":"handler/article_handler.go:52","message":"article created successfully","article_id":15}
+{"level":"INFO","time":"2025-08-13T13:00:43.711+0800","caller":"log/zap_adapter.go:20","message":"article cache miss","article_id":15}
+{"level":"INFO","time":"2025-08-13T13:00:43.712+0800","caller":"handler/article_handler.go:70","message":"article retrieved successfully","article_id":15}
+{"level":"INFO","time":"2025-08-13T13:00:43.762+0800","caller":"log/zap_adapter.go:20","message":"user registered successfully","username":"testuser_1755061243712930492"}
+{"level":"INFO","time":"2025-08-13T13:00:43.762+0800","caller":"log/zap_adapter.go:20","message":"event recorded","timestamp":"2025-08-13T13:00:43.762+0800","user_id":0,"action":"register_success","entity":"user","entity_id":0,"details":"{\"email\":\"testuser_1755061243712930492@example.com\",\"username\":\"testuser_1755061243712930492\"}"}
+{"level":"INFO","time":"2025-08-13T13:00:43.762+0800","caller":"handler/user_handler.go:47","message":"user registered successfully","username":"testuser_1755061243712930492"}
+{"level":"INFO","time":"2025-08-13T13:00:43.802+0800","caller":"log/zap_adapter.go:20","message":"user logged in successfully","email":"testuser_1755061243712930492@example.com"}
+{"level":"INFO","time":"2025-08-13T13:00:43.802+0800","caller":"log/zap_adapter.go:20","message":"event recorded","timestamp":"2025-08-13T13:00:43.802+0800","user_id":46,"action":"login_success","entity":"user","entity_id":46,"details":"{\"email\":\"testuser_1755061243712930492@example.com\"}"}
+{"level":"INFO","time":"2025-08-13T13:00:43.802+0800","caller":"handler/user_handler.go:65","message":"user logged in successfully","email":"testuser_1755061243712930492@example.com"}
+{"level":"INFO","time":"2025-08-13T13:56:55.936+0800","caller":"log/zap_adapter.go:20","message":"user registered successfully","username":"testuser_1755064615880084526"}
+{"level":"INFO","time":"2025-08-13T13:56:55.937+0800","caller":"log/zap_adapter.go:20","message":"Audit event recorded","log_type":"audit","timestamp":"2025-08-13T13:56:55.937+0800","user_id":0,"action":"register_success","entity":"user","entity_id":0,"details":"{\"email\":\"testuser_1755064615880084526@example.com\",\"username\":\"testuser_1755064615880084526\"}"}
+{"level":"INFO","time":"2025-08-13T13:56:55.937+0800","caller":"handler/user_handler.go:47","message":"user registered successfully","username":"testuser_1755064615880084526"}
+{"level":"INFO","time":"2025-08-13T13:56:55.977+0800","caller":"log/zap_adapter.go:20","message":"user logged in successfully","email":"testuser_1755064615880084526@example.com"}
+{"level":"INFO","time":"2025-08-13T13:56:55.977+0800","caller":"log/zap_adapter.go:20","message":"Audit event recorded","log_type":"audit","timestamp":"2025-08-13T13:56:55.977+0800","user_id":47,"action":"login_success","entity":"user","entity_id":47,"details":"{\"email\":\"testuser_1755064615880084526@example.com\"}"}
+{"level":"INFO","time":"2025-08-13T13:56:55.977+0800","caller":"handler/user_handler.go:65","message":"user logged in successfully","email":"testuser_1755064615880084526@example.com"}
+{"level":"INFO","time":"2025-08-13T13:56:55.977+0800","caller":"middleware/auth_middleware.go:38","message":"user authenticated","user_id":47}
+{"level":"INFO","time":"2025-08-13T13:56:55.988+0800","caller":"log/zap_adapter.go:20","message":"article created successfully","article_id":16}
+{"level":"INFO","time":"2025-08-13T13:56:55.988+0800","caller":"handler/article_handler.go:52","message":"article created successfully","article_id":16}
+{"level":"INFO","time":"2025-08-13T13:56:55.988+0800","caller":"log/zap_adapter.go:20","message":"article cache miss","article_id":16}
+{"level":"INFO","time":"2025-08-13T13:56:55.990+0800","caller":"handler/article_handler.go:70","message":"article retrieved successfully","article_id":16}
+{"level":"INFO","time":"2025-08-13T13:56:56.036+0800","caller":"log/zap_adapter.go:20","message":"user registered successfully","username":"testuser_1755064615990227370"}
+{"level":"INFO","time":"2025-08-13T13:56:56.037+0800","caller":"log/zap_adapter.go:20","message":"Audit event recorded","log_type":"audit","timestamp":"2025-08-13T13:56:56.037+0800","user_id":0,"action":"register_success","entity":"user","entity_id":0,"details":"{\"email\":\"testuser_1755064615990227370@example.com\",\"username\":\"testuser_1755064615990227370\"}"}
+{"level":"INFO","time":"2025-08-13T13:56:56.037+0800","caller":"handler/user_handler.go:47","message":"user registered successfully","username":"testuser_1755064615990227370"}
+{"level":"INFO","time":"2025-08-13T13:56:56.076+0800","caller":"log/zap_adapter.go:20","message":"user logged in successfully","email":"testuser_1755064615990227370@example.com"}
+{"level":"INFO","time":"2025-08-13T13:56:56.076+0800","caller":"log/zap_adapter.go:20","message":"Audit event recorded","log_type":"audit","timestamp":"2025-08-13T13:56:56.076+0800","user_id":48,"action":"login_success","entity":"user","entity_id":48,"details":"{\"email\":\"testuser_1755064615990227370@example.com\"}"}
+{"level":"INFO","time":"2025-08-13T13:56:56.076+0800","caller":"handler/user_handler.go:65","message":"user logged in successfully","email":"testuser_1755064615990227370@example.com"}
+{"level":"INFO","time":"2025-08-13T14:12:27.465+0800","caller":"log/zap_adapter.go:20","message":"user registered successfully","username":"testuser_1755065547415257808"}
+{"level":"INFO","time":"2025-08-13T14:12:27.465+0800","caller":"handler/user_handler.go:47","message":"user registered successfully","username":"testuser_1755065547415257808"}
+{"level":"INFO","time":"2025-08-13T14:12:27.506+0800","caller":"log/zap_adapter.go:20","message":"user logged in successfully","email":"testuser_1755065547415257808@example.com"}
+{"level":"INFO","time":"2025-08-13T14:12:27.506+0800","caller":"handler/user_handler.go:65","message":"user logged in successfully","email":"testuser_1755065547415257808@example.com"}
+{"level":"INFO","time":"2025-08-13T14:12:27.506+0800","caller":"middleware/auth_middleware.go:38","message":"user authenticated","user_id":52}
+{"level":"INFO","time":"2025-08-13T14:12:27.515+0800","caller":"log/zap_adapter.go:20","message":"article created successfully","article_id":18}
+{"level":"INFO","time":"2025-08-13T14:12:27.515+0800","caller":"handler/article_handler.go:52","message":"article created successfully","article_id":18}
+{"level":"INFO","time":"2025-08-13T14:12:27.515+0800","caller":"log/zap_adapter.go:20","message":"article cache miss","article_id":18}
+{"level":"INFO","time":"2025-08-13T14:12:27.517+0800","caller":"handler/article_handler.go:70","message":"article retrieved successfully","article_id":18}
+{"level":"INFO","time":"2025-08-13T14:12:27.565+0800","caller":"log/zap_adapter.go:20","message":"user registered successfully","username":"testuser_1755065547517389256"}
+{"level":"INFO","time":"2025-08-13T14:12:27.565+0800","caller":"handler/user_handler.go:47","message":"user registered successfully","username":"testuser_1755065547517389256"}
+{"level":"INFO","time":"2025-08-13T14:12:27.604+0800","caller":"log/zap_adapter.go:20","message":"user logged in successfully","email":"testuser_1755065547517389256@example.com"}
+{"level":"INFO","time":"2025-08-13T14:12:27.604+0800","caller":"handler/user_handler.go:65","message":"user logged in successfully","email":"testuser_1755065547517389256@example.com"}
+{"level":"INFO","time":"2025-08-13T14:12:31.187+0800","caller":"log/zap_adapter.go:20","message":"user registered successfully","username":"testuser_1755065551135334655"}
+{"level":"INFO","time":"2025-08-13T14:12:31.187+0800","caller":"handler/user_handler.go:47","message":"user registered successfully","username":"testuser_1755065551135334655"}
+{"level":"INFO","time":"2025-08-13T14:12:31.227+0800","caller":"log/zap_adapter.go:20","message":"user logged in successfully","email":"testuser_1755065551135334655@example.com"}
+{"level":"INFO","time":"2025-08-13T14:12:31.227+0800","caller":"handler/user_handler.go:65","message":"user logged in successfully","email":"testuser_1755065551135334655@example.com"}
+{"level":"INFO","time":"2025-08-13T14:12:31.227+0800","caller":"middleware/auth_middleware.go:38","message":"user authenticated","user_id":54}
+{"level":"INFO","time":"2025-08-13T14:12:31.236+0800","caller":"log/zap_adapter.go:20","message":"article created successfully","article_id":19}
+{"level":"INFO","time":"2025-08-13T14:12:31.236+0800","caller":"handler/article_handler.go:52","message":"article created successfully","article_id":19}
+{"level":"INFO","time":"2025-08-13T14:12:31.237+0800","caller":"log/zap_adapter.go:20","message":"article cache miss","article_id":19}
+{"level":"INFO","time":"2025-08-13T14:12:31.239+0800","caller":"handler/article_handler.go:70","message":"article retrieved successfully","article_id":19}
+{"level":"INFO","time":"2025-08-13T14:12:31.289+0800","caller":"log/zap_adapter.go:20","message":"user registered successfully","username":"testuser_1755065551239187518"}
+{"level":"INFO","time":"2025-08-13T14:12:31.289+0800","caller":"handler/user_handler.go:47","message":"user registered successfully","username":"testuser_1755065551239187518"}
+{"level":"INFO","time":"2025-08-13T14:12:31.329+0800","caller":"log/zap_adapter.go:20","message":"user logged in successfully","email":"testuser_1755065551239187518@example.com"}
+{"level":"INFO","time":"2025-08-13T14:12:31.329+0800","caller":"handler/user_handler.go:65","message":"user logged in successfully","email":"testuser_1755065551239187518@example.com"}
