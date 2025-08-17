@@ -14,7 +14,7 @@ import (
 	reflect "reflect"
 	time "time"
 
-	domain "github.com/formal-you/clean-architecture-blog/domain"
+	domain "github.com/FormalYou/clean-architecture-blog/domain"
 	gomock "go.uber.org/mock/gomock"
 )
 

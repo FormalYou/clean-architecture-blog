@@ -12,7 +12,7 @@ package mocks
 import (
 	reflect "reflect"
 
-	contracts "github.com/formal-you/clean-architecture-blog/internal/application/contracts"
+	contracts "github.com/FormalYou/clean-architecture-blog/internal/application/contracts"
 	gomock "go.uber.org/mock/gomock"
 )
 

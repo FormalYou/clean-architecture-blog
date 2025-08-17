@@ -3,7 +3,7 @@ package gorm
 import (
 	"time"
 
-	"github.com/formal-you/clean-architecture-blog/domain"
+	"github.com/FormalYou/clean-architecture-blog/domain"
 )
 
 // UserModel 是用户在GORM中的持久化模型

@@ -1,8 +1,9 @@
 package gorm
 
 import (
-	"github.com/formal-you/clean-architecture-blog/domain"
 	"time"
+
+	"github.com/FormalYou/clean-architecture-blog/domain"
 )
 
 // CommentModel 是评论在GORM中的持久化模型

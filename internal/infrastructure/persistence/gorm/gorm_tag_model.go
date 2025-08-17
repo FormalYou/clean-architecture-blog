@@ -1,6 +1,6 @@
 package gorm
 
-import "github.com/formal-you/clean-architecture-blog/domain"
+import "github.com/FormalYou/clean-architecture-blog/domain"
 
 // TagModel 是标签在GORM中的持久化模型
 type TagModel struct {

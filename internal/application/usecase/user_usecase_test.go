@@ -8,11 +8,11 @@ import (
 	"github.com/stretchr/testify/assert"
 	"go.uber.org/mock/gomock"
 
-	"github.com/formal-you/clean-architecture-blog/domain"
-	mock_contracts "github.com/formal-you/clean-architecture-blog/internal/application/contracts/mocks"
-	"github.com/formal-you/clean-architecture-blog/internal/application/repository"
-	mock_repo "github.com/formal-you/clean-architecture-blog/internal/application/repository/mocks"
-	"github.com/formal-you/clean-architecture-blog/internal/errorx"
+	"github.com/FormalYou/clean-architecture-blog/domain"
+	mock_contracts "github.com/FormalYou/clean-architecture-blog/internal/application/contracts/mocks"
+	"github.com/FormalYou/clean-architecture-blog/internal/application/repository"
+	mock_repo "github.com/FormalYou/clean-architecture-blog/internal/application/repository/mocks"
+	"github.com/FormalYou/clean-architecture-blog/internal/errorx"
 )
 
 func TestUserUsecase_Register(t *testing.T) {

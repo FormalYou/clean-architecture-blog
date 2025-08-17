@@ -3,7 +3,7 @@ package repository
 import (
 	"context"
 
-	"github.com/formal-you/clean-architecture-blog/domain"
+	"github.com/FormalYou/clean-architecture-blog/domain"
 )
 
 // ArticleRepository 定义了文章实体的持久化操作接口

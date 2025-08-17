@@ -3,7 +3,7 @@ package gorm
 import (
 	"time"
 
-	"github.com/formal-you/clean-architecture-blog/domain"
+	"github.com/FormalYou/clean-architecture-blog/domain"
 )
 
 // ArticleModel 是文章在GORM中的持久化模型

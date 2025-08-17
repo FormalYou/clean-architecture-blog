@@ -14,11 +14,11 @@ import (
 	"go.uber.org/mock/gomock"
 	"go.uber.org/zap"
 
-	"github.com/formal-you/clean-architecture-blog/domain"
-	"github.com/formal-you/clean-architecture-blog/internal/application/repository"
-	mock_usecase "github.com/formal-you/clean-architecture-blog/internal/application/usecase/mocks"
-	"github.com/formal-you/clean-architecture-blog/internal/errorx"
-	"github.com/formal-you/clean-architecture-blog/internal/interfaces/http/handler/middleware"
+	"github.com/FormalYou/clean-architecture-blog/domain"
+	"github.com/FormalYou/clean-architecture-blog/internal/application/repository"
+	mock_usecase "github.com/FormalYou/clean-architecture-blog/internal/application/usecase/mocks"
+	"github.com/FormalYou/clean-architecture-blog/internal/errorx"
+	"github.com/FormalYou/clean-architecture-blog/internal/interfaces/http/handler/middleware"
 )
 
 func setupArticleRouter(articleHandler *ArticleHandler) *gin.Engine {

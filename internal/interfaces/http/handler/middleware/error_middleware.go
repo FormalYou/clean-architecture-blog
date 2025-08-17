@@ -3,7 +3,7 @@ package middleware
 import (
 	"errors"
 
-	"github.com/formal-you/clean-architecture-blog/internal/errorx"
+	"github.com/FormalYou/clean-architecture-blog/internal/errorx"
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"

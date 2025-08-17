@@ -16,14 +16,14 @@ import (
 	"go.uber.org/zap"
 	"gorm.io/gorm"
 
-	"github.com/formal-you/clean-architecture-blog/internal/application/usecase"
-	"github.com/formal-you/clean-architecture-blog/internal/infrastructure/auth"
-	"github.com/formal-you/clean-architecture-blog/internal/infrastructure/cache"
-	"github.com/formal-you/clean-architecture-blog/internal/infrastructure/config"
-	"github.com/formal-you/clean-architecture-blog/internal/infrastructure/log"
-	gorm_db "github.com/formal-you/clean-architecture-blog/internal/infrastructure/persistence/gorm"
-	"github.com/formal-you/clean-architecture-blog/internal/interfaces/http/handler"
-	"github.com/formal-you/clean-architecture-blog/internal/interfaces/http/handler/middleware"
+	"github.com/FormalYou/clean-architecture-blog/internal/application/usecase"
+	"github.com/FormalYou/clean-architecture-blog/internal/infrastructure/auth"
+	"github.com/FormalYou/clean-architecture-blog/internal/infrastructure/cache"
+	"github.com/FormalYou/clean-architecture-blog/internal/infrastructure/config"
+	"github.com/FormalYou/clean-architecture-blog/internal/infrastructure/log"
+	gorm_db "github.com/FormalYou/clean-architecture-blog/internal/infrastructure/persistence/gorm"
+	"github.com/FormalYou/clean-architecture-blog/internal/interfaces/http/handler"
+	"github.com/FormalYou/clean-architecture-blog/internal/interfaces/http/handler/middleware"
 )
 
 var (

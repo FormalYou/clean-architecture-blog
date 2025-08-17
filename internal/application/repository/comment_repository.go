@@ -1,6 +1,6 @@
 package repository
 
-import "github.com/formal-you/clean-architecture-blog/domain"
+import "github.com/FormalYou/clean-architecture-blog/domain"
 
 // CommentRepository defines the interface for comment persistence.
 type CommentRepository interface {

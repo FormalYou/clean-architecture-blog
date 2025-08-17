@@ -8,11 +8,11 @@ import (
 	"github.com/stretchr/testify/assert"
 	"go.uber.org/mock/gomock"
 
-	"github.com/formal-you/clean-architecture-blog/domain"
-	"github.com/formal-you/clean-architecture-blog/internal/application/repository"
-	mock_contracts "github.com/formal-you/clean-architecture-blog/internal/application/contracts/mocks"
-	mock_repo "github.com/formal-you/clean-architecture-blog/internal/application/repository/mocks"
-	"github.com/formal-you/clean-architecture-blog/internal/errorx"
+	"github.com/FormalYou/clean-architecture-blog/domain"
+	mock_contracts "github.com/FormalYou/clean-architecture-blog/internal/application/contracts/mocks"
+	"github.com/FormalYou/clean-architecture-blog/internal/application/repository"
+	mock_repo "github.com/FormalYou/clean-architecture-blog/internal/application/repository/mocks"
+	"github.com/FormalYou/clean-architecture-blog/internal/errorx"
 )
 
 func TestArticleUsecase_CreateArticle(t *testing.T) {
@@ -102,11 +102,11 @@ func TestArticleUsecase_GetArticleByID(t *testing.T) {
 	expectedArticle := &domain.Article{ID: 1, Title: "Cached Article"}
 
 	testCases := []struct {
-		name          string
-		articleID     int64
-		setupMocks    func()
+		name            string
+		articleID       int64
+		setupMocks      func()
 		expectedArticle *domain.Article
-		expectedError error
+		expectedError   error
 	}{
 		{
 			name:      "Cache Hit",
@@ -116,7 +116,7 @@ func TestArticleUsecase_GetArticleByID(t *testing.T) {
 				mockLogger.EXPECT().Info(gomock.Any(), gomock.Any())
 			},
 			expectedArticle: expectedArticle,
-			expectedError: nil,
+			expectedError:   nil,
 		},
 		{
 			name:      "Cache Miss, DB Success",
@@ -129,7 +129,7 @@ func TestArticleUsecase_GetArticleByID(t *testing.T) {
 				mockArticleCacheRepo.EXPECT().SetArticle(gomock.Any(), gomock.Any(), gomock.Any()).Return(nil)
 			},
 			expectedArticle: expectedArticle,
-			expectedError: nil,
+			expectedError:   nil,
 		},
 		{
 			name:      "Cache Miss, DB Not Found",
@@ -141,7 +141,7 @@ func TestArticleUsecase_GetArticleByID(t *testing.T) {
 				mockArticleRepo.EXPECT().GetByID(gomock.Any(), int64(3)).Return(nil, repository.ErrNotFound)
 			},
 			expectedArticle: nil,
-			expectedError: errorx.New(errorx.CodeArticleNotFound, repository.ErrNotFound),
+			expectedError:   errorx.New(errorx.CodeArticleNotFound, repository.ErrNotFound),
 		},
 		{
 			name:      "Cache Miss, DB Error",
@@ -154,7 +154,7 @@ func TestArticleUsecase_GetArticleByID(t *testing.T) {
 				mockArticleRepo.EXPECT().GetByID(gomock.Any(), int64(4)).Return(nil, dbError)
 			},
 			expectedArticle: nil,
-			expectedError: errorx.New(errorx.CodeInternalServerError, errors.New("db connection failed")),
+			expectedError:   errorx.New(errorx.CodeInternalServerError, errors.New("db connection failed")),
 		},
 	}
 

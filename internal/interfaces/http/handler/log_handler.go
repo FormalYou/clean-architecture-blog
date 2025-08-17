@@ -6,7 +6,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap/zapcore"
 
-	"github.com/formal-you/clean-architecture-blog/internal/infrastructure/log"
+	"github.com/FormalYou/clean-architecture-blog/internal/infrastructure/log"
 )
 
 // LogHandler handles log level changes.

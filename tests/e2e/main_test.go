@@ -8,7 +8,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/formal-you/clean-architecture-blog/cmd/server/option"
+	"github.com/FormalYou/clean-architecture-blog/cmd/server/option"
 )
 
 var (

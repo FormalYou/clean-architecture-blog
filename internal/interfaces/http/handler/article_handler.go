@@ -7,10 +7,10 @@ import (
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
 
-	"github.com/formal-you/clean-architecture-blog/domain"
-	"github.com/formal-you/clean-architecture-blog/internal/application/usecase"
-	"github.com/formal-you/clean-architecture-blog/internal/errorx"
-	"github.com/formal-you/clean-architecture-blog/internal/interfaces/http/dto"
+	"github.com/FormalYou/clean-architecture-blog/domain"
+	"github.com/FormalYou/clean-architecture-blog/internal/application/usecase"
+	"github.com/FormalYou/clean-architecture-blog/internal/errorx"
+	"github.com/FormalYou/clean-architecture-blog/internal/interfaces/http/dto"
 )
 
 // ArticleHandler handles HTTP requests for articles

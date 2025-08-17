@@ -3,11 +3,9 @@ package main
 import (
 	"go.uber.org/zap"
 
-	"github.com/formal-you/clean-architecture-blog/cmd/server/option"
-	zaplog "github.com/formal-you/clean-architecture-blog/internal/infrastructure/log"
+	"github.com/FormalYou/clean-architecture-blog/cmd/server/option"
+	zaplog "github.com/FormalYou/clean-architecture-blog/internal/infrastructure/log"
 )
-
-
 
 func main() {
 	// Defer logger sync

@@ -12,7 +12,7 @@ package mocks
 import (
 	reflect "reflect"
 
-	domain "github.com/formal-you/clean-architecture-blog/domain"
+	domain "github.com/FormalYou/clean-architecture-blog/domain"
 	gomock "go.uber.org/mock/gomock"
 )
 

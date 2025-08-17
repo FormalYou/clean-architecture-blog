@@ -3,8 +3,8 @@ package usecase
 import (
 	"encoding/json"
 
-	"github.com/formal-you/clean-architecture-blog/domain"
-	"github.com/formal-you/clean-architecture-blog/internal/application/contracts"
+	"github.com/FormalYou/clean-architecture-blog/domain"
+	"github.com/FormalYou/clean-architecture-blog/internal/application/contracts"
 )
 
 type auditService struct {

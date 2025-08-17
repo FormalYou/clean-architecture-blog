@@ -2,8 +2,9 @@ package gorm
 
 import (
 	"errors"
-	"github.com/formal-you/clean-architecture-blog/domain"
-	"github.com/formal-you/clean-architecture-blog/internal/application/repository"
+
+	"github.com/FormalYou/clean-architecture-blog/domain"
+	"github.com/FormalYou/clean-architecture-blog/internal/application/repository"
 	"gorm.io/gorm"
 )
 

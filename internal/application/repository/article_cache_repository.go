@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/formal-you/clean-architecture-blog/domain"
+	"github.com/FormalYou/clean-architecture-blog/domain"
 )
 
 type ArticleCacheRepository interface {

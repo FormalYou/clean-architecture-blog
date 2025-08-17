@@ -1,4 +1,4 @@
-module github.com/formal-you/clean-architecture-blog
+module github.com/FormalYou/clean-architecture-blog
 
 go 1.24.4
 

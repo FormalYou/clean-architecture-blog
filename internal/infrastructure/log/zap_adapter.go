@@ -1,7 +1,7 @@
 package log
 
 import (
-	"github.com/formal-you/clean-architecture-blog/internal/application/contracts"
+	"github.com/FormalYou/clean-architecture-blog/internal/application/contracts"
 	"go.uber.org/zap"
 )
 

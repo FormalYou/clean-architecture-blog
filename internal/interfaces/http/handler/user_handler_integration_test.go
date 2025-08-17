@@ -7,7 +7,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/formal-you/clean-architecture-blog/internal/interfaces/http/dto"
+	"github.com/FormalYou/clean-architecture-blog/internal/interfaces/http/dto"
 )
 
 func TestUserHandler_Integration_Register(t *testing.T) {

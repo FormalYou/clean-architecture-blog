@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/formal-you/clean-architecture-blog/internal/application/contracts"
-	"github.com/formal-you/clean-architecture-blog/internal/interfaces/http/dto"
+	"github.com/FormalYou/clean-architecture-blog/internal/application/contracts"
+	"github.com/FormalYou/clean-architecture-blog/internal/interfaces/http/dto"
 	"github.com/golang-jwt/jwt/v5"
 )
 

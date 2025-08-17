@@ -5,8 +5,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/formal-you/clean-architecture-blog/domain"
-	"github.com/formal-you/clean-architecture-blog/internal/application/contracts/mocks"
+	"github.com/FormalYou/clean-architecture-blog/domain"
+	"github.com/FormalYou/clean-architecture-blog/internal/application/contracts/mocks"
 	"go.uber.org/mock/gomock"
 )
 

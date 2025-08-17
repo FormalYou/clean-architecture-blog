@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/formal-you/clean-architecture-blog/internal/interfaces/http/dto"
+	"github.com/FormalYou/clean-architecture-blog/internal/interfaces/http/dto"
 	"github.com/stretchr/testify/assert"
 )
 

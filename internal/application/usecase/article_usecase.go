@@ -5,10 +5,10 @@ import (
 	"errors"
 	"time"
 
-	"github.com/formal-you/clean-architecture-blog/domain"
-	"github.com/formal-you/clean-architecture-blog/internal/application/contracts"
-	"github.com/formal-you/clean-architecture-blog/internal/application/repository"
-	"github.com/formal-you/clean-architecture-blog/internal/errorx"
+	"github.com/FormalYou/clean-architecture-blog/domain"
+	"github.com/FormalYou/clean-architecture-blog/internal/application/contracts"
+	"github.com/FormalYou/clean-architecture-blog/internal/application/repository"
+	"github.com/FormalYou/clean-architecture-blog/internal/errorx"
 )
 
 // ArticleUsecaseInterface 定义了文章相关的业务逻辑接口
